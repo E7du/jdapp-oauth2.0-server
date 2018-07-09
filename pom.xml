@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.zhucongqi</groupId>
+	<artifactId>jdapp-oauth2.0</artifactId>
+	<version>${jdapp-oatuh2.0-version}</version>
+	<name>jdapp-oauth2.0-server</name>
+	<description>jdapp-oauth2.0-server</description>
+	<packaging>pom</packaging>
+	<url>https://github.com/E7du/jdapp-oauth2.0-server</url>
+	<properties>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdapp-oatuh2.0-version>0.0.1-SNAPSHOT</jdapp-oatuh2.0-version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>cn.zhucongqi</groupId>
+			<artifactId>jdapp-launcher</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>jdapp-oauth2.0-server</module>
+		<module>jdapp-oauth2.0-server-services</module>
+	</modules>
+</project>

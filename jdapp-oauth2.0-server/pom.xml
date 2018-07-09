@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cn.zhucongqi</groupId>
+		<artifactId>jdapp-oauth2.0</artifactId>
+		<version>${jdapp-oatuh2.0-version}</version>
+	</parent>
+	<artifactId>jdapp-oauth2.0-server</artifactId>
+	<packaging>war</packaging>
+	<name>jdapp-oauth2.0-server</name>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cn.zhucongqi</groupId>
+			<artifactId>joauth2.0</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jfinal</groupId>
+			<artifactId>jfinal-ext3</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>jdapp-oauth2.0-server</finalName>
+	</build>
+</project>
