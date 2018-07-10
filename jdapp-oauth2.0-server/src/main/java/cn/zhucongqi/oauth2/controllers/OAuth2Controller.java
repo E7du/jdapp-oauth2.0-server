@@ -22,17 +22,9 @@ import cn.zhucongqi.oauth2.kit.OAuthRequestKit;
 @Before({OnExceptionInterceptorExt.class, IocInterceptor.class})
 public class OAuth2Controller extends ControllerExt {
 
-	//auto init the service instance
 	@Inject.BY_NAME
 	private OAuthApi oauthService;
 	
-	public OAuth2Controller() {
-	}
-
-	@Override
-	protected void onInit() {
-	}
-
 	@ActionKey(ActionUrls.AUTHORIZE_URL)
 	public void onAuthorize() {
 		this.renderJson(this.oauthService.authrize(OAuthRequestKit.cp(this.getRequest())));
