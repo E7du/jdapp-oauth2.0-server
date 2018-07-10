@@ -13,7 +13,6 @@ import com.jfinal.ext.plugin.spring.IocInterceptor;
 import cn.zhucongqi.oauth2.base.services.OAuthApi;
 import cn.zhucongqi.oauth2.consts.ActionUrls;
 import cn.zhucongqi.oauth2.kit.OAuthRequestKit;
-import cn.zhucongqi.oauth2.request.OAuthHttpServletRequest;
 
 /**
  * 
@@ -36,32 +35,27 @@ public class OAuth2Controller extends ControllerExt {
 
 	@ActionKey(ActionUrls.AUTHORIZE_URL)
 	public void onAuthorize() {
-		this.oauthService.authrize();
+		this.renderJson(this.oauthService.authrize(OAuthRequestKit.cp(this.getRequest())));
 	}
 
 	@ActionKey(ActionUrls.AUTHORIZE_CODE_URL)
 	public void onAuthorizeCode() {
-		this.oauthService.authrizeCode();
+		this.renderJson(this.oauthService.authrizeCode(OAuthRequestKit.cp(this.getRequest())));
 	}
 	
 	@ActionKey(ActionUrls.SECURE_ACCESS_TOKEN_URL)
 	public void onAccessTokenSecure() {
-
-		OAuthHttpServletRequest req = new OAuthHttpServletRequest();
-		OAuthRequestKit.cp(this.getRequest(), req);
-		this.oauthService.initRequest(req);
-		Object ret = this.oauthService.secureAccessToken();
-		this.renderJson(ret);
+		this.renderJson(this.oauthService.secureAccessToken(OAuthRequestKit.cp(this.getRequest())));
 	}
 
 	@ActionKey(ActionUrls.ACCESS_TOKEN_URL)
 	public void onAcessToken() {
-		this.oauthService.accessToken();
+		this.renderJson(this.oauthService.accessToken(OAuthRequestKit.cp(this.getRequest())));
 	}
 	
 	@ActionKey(ActionUrls.REFRESH_TOKEN_URL)
 	public void onRefreshToken() {	
-		this.oauthService.refreshToken();
+		this.renderJson(this.oauthService.refreshToken(OAuthRequestKit.cp(this.getRequest())));
 	}
 
 	@Override

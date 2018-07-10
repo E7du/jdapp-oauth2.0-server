@@ -17,41 +17,34 @@ import cn.zhucongqi.oauth2.response.OAuthErrResponse;
  */
 public class OAuthService implements OAuthApi {
 	
-	private OAuthHttpServletRequest request = null;
-	
-	@Override
-	public void initRequest(OAuthHttpServletRequest request) {
-		this.request = request;
-	}
-
-	private Object respClient(int requestType) {
+	private Object respClient(int requestType, OAuthHttpServletRequest req) {
 		Object o = null;
 		OAuthRequest request = null;
 		try {
 			switch (requestType) {
 			case OAuthRequestConsts.AUTHORIZATION_REQUEST: {
-				request = OAuthRequest.authorizatonRequest(this.request, new PasswordClientCredentials());
+				request = OAuthRequest.authorizatonRequest(req, new PasswordClientCredentials());
 			}
 				break;
 
 			case OAuthRequestConsts.ACCESS_TOKEN_REQUEST: {
-				request = OAuthRequest.accessTokenRequest(this.request, new PasswordClientCredentials());
+				request = OAuthRequest.accessTokenRequest(req, new PasswordClientCredentials());
 			}
 				break;
 			case OAuthRequestConsts.CLIENT_CREDENTIAL_REQUEST: {
-				request = OAuthRequest.clientCredentialRequest(this.request, new PasswordClientCredentials());
+				request = OAuthRequest.clientCredentialRequest(req, new PasswordClientCredentials());
 			}
 				break;
 			case OAuthRequestConsts.IMPLICIT_REQUEST: {
-				request = OAuthRequest.implicitRequest(this.request, new PasswordClientCredentials());
+				request = OAuthRequest.implicitRequest(req, new PasswordClientCredentials());
 			}
 				break;
 			case OAuthRequestConsts.PASSOWRD_CREDENTIAL_REQUEST: {
-				request = OAuthRequest.passwordCredentialRequest(this.request, new PasswordClientCredentials());
+				request = OAuthRequest.passwordCredentialRequest(req, new PasswordClientCredentials());
 			}
 				break;
 			case OAuthRequestConsts.REFRESH_TOKEN_REQUEST: {
-				request = OAuthRequest.refreshTokenRequest(this.request, new PasswordClientCredentials());
+				request = OAuthRequest.refreshTokenRequest(req, new PasswordClientCredentials());
 			}
 				break;
 			}
@@ -67,28 +60,28 @@ public class OAuthService implements OAuthApi {
 	}
  	
 	@Override
-	public Object authrize() {
-		return this.respClient(OAuthRequestConsts.AUTHORIZATION_REQUEST);
+	public Object authrize(OAuthHttpServletRequest request) {
+		return this.respClient(OAuthRequestConsts.AUTHORIZATION_REQUEST, request);
 	}
 	
 	@Override
-	public Object authrizeCode() {
+	public Object authrizeCode(OAuthHttpServletRequest request) {
 		return null;
 	}
 
 	@Override
-	public Object accessToken() {
-		return this.respClient(OAuthRequestConsts.ACCESS_TOKEN_REQUEST);
+	public Object accessToken(OAuthHttpServletRequest request) {
+		return this.respClient(OAuthRequestConsts.ACCESS_TOKEN_REQUEST, request);
 	}
 	
 	@Override
-	public Object secureAccessToken() {
-		return this.respClient(OAuthRequestConsts.PASSOWRD_CREDENTIAL_REQUEST);
+	public Object secureAccessToken(OAuthHttpServletRequest request) {
+		return this.respClient(OAuthRequestConsts.PASSOWRD_CREDENTIAL_REQUEST, request);
 	}
 
 	@Override
-	public Object refreshToken() {
-		return this.respClient(OAuthRequestConsts.REFRESH_TOKEN_REQUEST);
+	public Object refreshToken(OAuthHttpServletRequest request) {
+		return this.respClient(OAuthRequestConsts.REFRESH_TOKEN_REQUEST, request);
 	}
 
 }
