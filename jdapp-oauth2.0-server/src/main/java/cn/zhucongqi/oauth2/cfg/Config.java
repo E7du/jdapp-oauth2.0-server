@@ -9,6 +9,7 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.ext.config.JFinalConfigExt;
+import com.jfinal.ext.plugin.spring.SpringPlugin;
 import com.jfinal.template.Engine;
 
 import cn.zhucongqi.oauth2.data.DataKit;
@@ -37,6 +38,8 @@ public class Config extends JFinalConfigExt {
 
 	@Override
 	public void configMorePlugins(Plugins me) {
+		SpringPlugin sp = new SpringPlugin("classpath:conf/jdappoauth2-consumer.xml");
+		me.add(sp);
 	}
 
 	@Override

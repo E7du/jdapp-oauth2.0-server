@@ -12,24 +12,59 @@
 	<artifactId>jdapp-oauth2.0-server-services</artifactId>
 	<name>jdapp-oauth2.0-server-services</name>
 	<properties>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<dubbo.version>2.6.2</dubbo.version>
+        <zookeeper.version>3.4.6</zookeeper.version>
+        <curator.version>2.8.0</curator.version>
+        <jfext3.version>3.0.3</jfext3.version>
+        <junit.version>5.2.0</junit.version>
+        <joauth2.version>1.0.3-SNAPSHOT</joauth2.version>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<groupId>com.jfinal</groupId>
+			<artifactId>jfinal-ext3</artifactId>
+			<version>${jfext3.version}</version>
+		</dependency>
+		<dependency>
+    		<groupId>com.alibaba</groupId>
+   			<artifactId>dubbo</artifactId>
+    		<version>${dubbo.version}</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.zookeeper</groupId>
+    		<artifactId>zookeeper</artifactId>
+    		<version>${zookeeper.version}</version>
+    		<exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+		<dependency>
+   			 <groupId>org.slf4j</groupId>
+   			 <artifactId>slf4j-nop</artifactId>
+    		<version>1.7.25</version>
+		</dependency>
+		<dependency>
+   			<groupId>org.apache.curator</groupId>
+    		<artifactId>curator-framework</artifactId>
+    		<version>${curator.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.zhucongqi</groupId>
 			<artifactId>joauth2.0</artifactId>
-			<version>1.0.3-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.zhucongqi</groupId>
-			<artifactId>jdapp-launcher</artifactId>
-			<version>0.0.3</version>
+			<version>${joauth2.version}</version>
 		</dependency>
 	</dependencies>
 </project>
