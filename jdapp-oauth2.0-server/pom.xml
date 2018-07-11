@@ -20,7 +20,8 @@
         <curator.version>2.8.0</curator.version>
         <jfext3.version>3.0.4</jfext3.version>
         <junit.version>5.2.0</junit.version>
-        <joauth2.version>1.0.3-SNAPSHOT</joauth2.version>
+        <joauth2.version>1.0.3</joauth2.version>
+        <servlet.version>4.0.1</servlet.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -72,6 +73,12 @@
 			<groupId>cn.zhucongqi</groupId>
 			<artifactId>joauth2.0</artifactId>
 			<version>${joauth2.version}</version>
+		</dependency>
+		<dependency>
+  	  		<groupId>javax.servlet</groupId>
+    		<artifactId>javax.servlet-api</artifactId>
+    		<version>${servlet.version}</version>
+    		<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
