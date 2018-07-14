@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>cn.zhucongqi</groupId>
 		<artifactId>jdapp-oauth2.0</artifactId>
-		<version>${jdapp-oatuh2.0-version}</version>
+		<version>${jdapp-oauth2.0-version}</version>
 	</parent>
 	<artifactId>jdapp-oauth2.0-server-services</artifactId>
 	<name>jdapp-oauth2.0-server-services</name>

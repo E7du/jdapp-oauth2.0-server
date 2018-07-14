@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.zhucongqi</groupId>
 	<artifactId>jdapp-oauth2.0</artifactId>
-	<version>${jdapp-oatuh2.0-version}</version>
+	<version>${jdapp-oauth2.0-version}</version>
 	<name>jdapp-oauth2.0-server</name>
 	<description>jdapp-oauth2.0-server</description>
 	<packaging>pom</packaging>
@@ -13,7 +13,7 @@
 	<properties>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdapp-oatuh2.0-version>0.0.1</jdapp-oatuh2.0-version>
+		<jdapp-oauth2.0-version>0.0.1</jdapp-oauth2.0-version>
 		<jdapp-launcher.version>0.0.3</jdapp-launcher.version>
 		<dubbo.version>2.6.2</dubbo.version>
         <zookeeper.version>3.4.6</zookeeper.version>
