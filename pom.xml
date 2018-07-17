@@ -20,7 +20,7 @@
         <curator.version>2.8.0</curator.version>
         <jfext3.version>3.0.4</jfext3.version>
         <junit.version>5.2.0</junit.version>
-        <joauth2.version>1.0.3</joauth2.version>
+        <joauth2.version>1.0.5</joauth2.version>
         <servlet.version>4.0.1</servlet.version>
         <slf4j.version>1.7.25</slf4j.version>
 	</properties>
