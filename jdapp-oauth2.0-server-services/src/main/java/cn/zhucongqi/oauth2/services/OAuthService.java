@@ -31,7 +31,7 @@ import cn.zhucongqi.oauth2.response.OAuthErrResponse;
 public class OAuthService implements OAuthApi {
 	
 	private OAuthResponse respClient(int requestType, OAuthHttpServletRequest req) {
-		OAuthResponse o = null;
+		OAuthResponse res = null;
 		OAuthRequest request = null;
 		try {
 			switch (requestType) {
@@ -62,14 +62,13 @@ public class OAuthService implements OAuthApi {
 				break;
 			}
 
-			o = request.validate();//push to o: o = request.validate();
+			res = request.validate();
 			
 		} catch (OAuthProblemException e) {
 			e.printStackTrace();
-			OAuthErrResponse error = new OAuthErrResponse(request.getValidator(), e);
-			o = error;
+			res = new OAuthErrResponse(request.getValidator(), e);
 		}
-		return o;
+		return res;
 	}
  	
 	@Override
