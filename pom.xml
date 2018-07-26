@@ -14,13 +14,13 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdapp-oauth2.0-version>0.0.1</jdapp-oauth2.0-version>
-		<jdapp-launcher.version>0.0.5</jdapp-launcher.version>
+		<jdapp-launcher.version>0.0.6</jdapp-launcher.version>
 		<dubbo.version>2.6.2</dubbo.version>
         <zookeeper.version>3.4.6</zookeeper.version>
         <curator.version>2.8.0</curator.version>
-        <jfext3.version>3.0.6</jfext3.version>
+        <jfext3.version>3.0.8</jfext3.version>
         <junit.version>5.2.0</junit.version>
-        <joauth2.version>1.0.8final</joauth2.version>
+        <joauth2.version>1.0.8finalx</joauth2.version>
         <servlet.version>4.0.1</servlet.version>
         <slf4j.version>1.7.25</slf4j.version>
 	</properties>

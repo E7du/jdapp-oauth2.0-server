@@ -15,6 +15,8 @@
 */
 package cn.zhucongqi.oauth2.cfg;
 
+import java.util.Properties;
+
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -63,5 +65,14 @@ public class Config extends JFinalConfigExt {
 	@Override
 	public void configEngineMore(Engine me) {
 		
+	}
+
+	@Override
+	public Properties getLazyProp() {
+		Properties prop = new Properties();
+		prop.setProperty("app.dev", "true");
+		prop.setProperty("app.post", "true");
+		prop.setProperty("app.name", "jdapp-oauth2-server");//same: JFinalConfigExt.APP_NAME = "jdapp-oauth2-server";
+		return prop;
 	}
 }
