@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdapp-oauth2.0-version>0.0.1</jdapp-oauth2.0-version>
-		<jdapp-launcher.version>0.0.6</jdapp-launcher.version>
+		<jdapp-launcher.version>0.0.7</jdapp-launcher.version>
 		<dubbo.version>2.6.2</dubbo.version>
         <zookeeper.version>3.4.6</zookeeper.version>
         <curator.version>2.8.0</curator.version>
