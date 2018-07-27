@@ -18,6 +18,7 @@ package cn.zhucongqi.oauth2.controllers;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
 import com.jfinal.ext.core.ControllerExt;
+import com.jfinal.ext.interceptor.ExceptionInterceptor;
 import com.jfinal.ext.plugin.spring.Inject;
 import com.jfinal.ext.plugin.spring.IocInterceptor;
 
@@ -30,7 +31,7 @@ import cn.zhucongqi.oauth2.kit.OAuthRequestKit;
  * @author Jobsz [zcq@zhucongqi.cn]
  * @version
  */
-@Before({IocInterceptor.class})
+@Before({ExceptionInterceptor.class, IocInterceptor.class})
 public class OAuth2Controller extends ControllerExt {
 
 	@Inject.BY_NAME
